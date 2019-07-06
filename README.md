@@ -32,7 +32,7 @@ Configuration: set **location** parameter to the URL of weewx RSS feed, e. g.
 ```
 Forecasts are not supported.
 
-#Original readme
+# Original readme
 
 This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge) that features current observations, daily forecasts and history graphs for multiple locations and services. You can download it via [npm](https://www.npmjs.com/package/homebridge-weather-plus).
 
