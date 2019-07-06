@@ -4,6 +4,7 @@ const darksky = require('./api/darksky').DarkSkyAPI,
 	weatherunderground = require('./api/weatherunderground').WundergroundAPI,
 	openweathermap = require('./api/openweathermap').OpenWeatherMapAPI,
 	yahoo = require('./api/yahoo').YahooAPI,
+	weewx = require('./api/weewx').WeewxRssAPI,
 	debug = require('debug')('homebridge-weather-plus'),
 	version = require('./package.json').version;
 
@@ -104,7 +105,11 @@ function WeatherStationPlatform(log, config, api) {
 		}
 		else if (service === 'yahoo') {
 			debug("Using service Yahoo");
-			this.apis.push(new yahoo(this.location, log, debug));
+			this.apis.push(new yahoo(station.location, log, debug));
+		}
+		else if (service === 'weewx') {
+			debug("Using service Weewx");
+			this.apis.push(new weewx(station.location, log, debug));
 		}
 
 		this.accessoriesList.push(new CurrentConditionsWeatherAccessory(this, index));

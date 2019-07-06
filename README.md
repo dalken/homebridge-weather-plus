@@ -4,6 +4,36 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/naofireblade/homebridge-weather-plus.svg?style=flat-square)](https://github.com/naofireblade/homebridge-weather-plus)
 [![Weather](https://img.shields.io/badge/weather-sunny-edd100.svg?style=flat-square)](https://github.com/naofireblade/homebridge-weather-plus)
 
+# This fork modifications
+Additional weather service for parsing [weewx](http://www.weewx.com) RSS data.
+
+Available observations:
+- *Observation Time*
+- Temperature
+- Dew Point
+- Humidity
+- Air Pressure
+- Rain Last Hour
+- Rain All Day
+- Wind Speed
+- Wind Direction
+- Wind Speed Maximum
+
+Configuration: set **location** parameter to the URL of weewx RSS feed, e. g.
+```json
+"platforms": [
+	{
+		"platform": "WeatherPlus",
+		"name": "WeatherPlus",
+		"service": "weewx",
+		"location": "https://some_url/weewx_rss.xml",
+	}
+]
+```
+Forecasts are not supported.
+
+#Original readme
+
 This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge) that features current observations, daily forecasts and history graphs for multiple locations and services. You can download it via [npm](https://www.npmjs.com/package/homebridge-weather-plus).
 
 Feel free to leave any feedback [here](https://github.com/naofireblade/homebridge-weather-plus/issues).
